@@ -11,6 +11,17 @@ function ticketPurchase(selectedTickets) {
                 console.log(`There are only ${totalEntries} tickets available, that quantity will be sold to you`)
                 selectedTickets = totalEntries;
             }
+    
+            setTimeout(() => {
+                updateTickets(selectedTickets);
+                console.log(`Purchase of ${selectedTickets} tickets successfully`)
+                resolve();
+            }, 200);
         }, Math.random() * 200);
     })
+}
+
+function updateTickets(selectedTickets) {
+    totalEntries -= selectedTickets;
+    return
 }
