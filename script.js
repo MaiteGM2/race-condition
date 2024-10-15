@@ -25,3 +25,17 @@ function updateTickets(selectedTickets) {
     totalEntries -= selectedTickets;
     return
 }
+
+async function purchaseFlowControl() {
+    try {
+        await ticketPurchase(1);
+        await ticketPurchase(1);
+        await ticketPurchase(5);
+        await ticketPurchase(5);
+        await ticketPurchase(1);
+    } catch (error) {
+        console.error(`An error occurred during the purchase flow:`, error);
+    } 
+}
+
+purchaseFlowControl();
